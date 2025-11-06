@@ -1,0 +1,18 @@
+.idea
+*.iml
+.vscode
+out
+gen
+### macOS template
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+
+__pycache__/
+media/
+
+db.sqlite3
+.env
+*.env
