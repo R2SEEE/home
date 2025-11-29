@@ -23,7 +23,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'main_page'%}">Home</a>
+                <a class="navbar-brand" href="{% url 'main:main_page'%}">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -32,14 +32,14 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item dropdown ">
-                            <a class="nav-link dropdown-toggle text-white" href="{% url 'about' %}" role="button"
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Информация
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item  text-white" href="#">Доставка и оплата</a></li>
                                 <li><a class="dropdown-item  text-white" href="#">Контактная информация</a></li>
-                                <li><a class="dropdown-item  text-white" href="#">Про нас</a></li>
+                                <li><a class="dropdown-item  text-white" href="{% url 'main:about' %}">Про нас</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -145,9 +145,9 @@
     </header>
 
     <section>
-        <div class="container">
+        <div class="container content-offset">
             <!-- Каталог и корзина с фиксированным расположением на странице -->
-            <div class="row mt-1 position-fixed z-3">
+            <div class="row mt-1 sticky-top z-3">
                 <!-- Каталог -->
                 <div class="dropdown mb-2">
                     <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
@@ -157,11 +157,11 @@
                              height="16">
                     </button>
                     <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
-                        <li><a class="dropdown-item text-white" href="../../../../django_template/catalog.html">Все товары</a></li>
-                        <li><a class="dropdown-item text-white" href="../../../../django_template/catalog.html">Спальня</a></li>
-                        <li><a class="dropdown-item text-white" href="../../../../django_template/catalog.html">Декор</a></li>
-                        <li><a class="dropdown-item text-white" href="../../../../django_template/catalog.html">Офис</a></li>
-                        <li><a class="dropdown-item text-white" href="../../../../django_template/catalog.html">Фурнитура</a></li>
+                        <li><a class="dropdown-item text-white" href="{% url 'orders:index' %}">Все товары</a></li>
+                        <li><a class="dropdown-item text-white" href="{% url 'orders:index' %}">Спальня</a></li>
+                        <li><a class="dropdown-item text-white" href="{% url 'orders:index' %}">Декор</a></li>
+                        <li><a class="dropdown-item text-white" href="{% url 'orders:index' %}">Офис</a></li>
+                        <li><a class="dropdown-item text-white" href="{% url 'orders:index' %}">Фурнитура</a></li>
                     </ul>
                 </div>
             </div>

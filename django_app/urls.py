@@ -17,8 +17,12 @@ Including another URLconf
 from django.urls import include
 from django.contrib import admin
 from django.urls import path
+from .api import api
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main.urls')),
+    path('', include('main.urls', namespace='main')),
+    path('catalog/', include('orders.urls', namespace='orders')),
+    path("api/", api.urls),
+
 ]

@@ -41,3 +41,18 @@ body {
 #modalButton {
     margin-left: 10px;
 }
+
+
+/* Фильтр — одинаковый по высоте и “липкий” */
+.filter-card {
+    height: 100%;               /* растягиваем */
+    position: sticky;
+
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .content-offset {
+        margin-top: 12px; /* на мобильных шапка выше */
+    }
+}

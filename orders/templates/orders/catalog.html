@@ -1,0 +1,182 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+
+{% block css%}
+<link rel="stylesheet" href="{% static 'css/my_footer_css.css'%}">
+{% endblock css %}
+
+{% block content %}
+<div class="row">
+    <!-- Левая колонка с фильтром -->
+    <div class="col-12 col-md-4 col-lg-3 mb-4">
+
+        <!-- Кнопка для мобилок -->
+        <button class="btn btn-dark w-100 d-md-none mb-3"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#filters"
+                aria-expanded="false"
+                aria-controls="filters">
+            Фильтры
+        </button>
+
+        <!-- Блок фильтров: на md+ всегда открыт, на xs/s — в collapse -->
+        <div id="filters" class="collapse d-md-block">
+            <div class="card bg-dark text-white custom-shadow filter-card">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Фильтры</h5>
+
+                    <form action="" method="get">
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" name="on_sale" id="onSaleCheck"
+                                   value="on">
+                            <label class="form-check-label" for="onSaleCheck">
+                                Товары по акции
+                            </label>
+                        </div>
+
+                        <input type="hidden" name="q" value="{{ request.GET.q }}">
+
+                        <p class="mb-2">Сортировать:</p>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="order_by" id="orderDefault"
+                                   value="default" checked>
+                            <label class="form-check-label" for="orderDefault">
+                                По умолчанию
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="order_by" id="orderPriceAsc"
+                                   value="price">
+                            <label class="form-check-label" for="orderPriceAsc">
+                                От дешевых к дорогим
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="order_by" id="orderPriceDesc"
+                                   value="-price">
+                            <label class="form-check-label" for="orderPriceDesc">
+                                От дорогих к дешевым
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            Применить
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Правая колонка с каталогом -->
+    <div class="col-12 col-md-8 col-lg-9 d-flex">
+        <div class="row flex-grow-1">
+            <!-- Карта товара -->
+            <div class="col-12 col-sm-6 col-lg-4 p-3">
+                <div class="card border-primary rounded custom-shadow position-relative h-100">
+                    <img src="{% static 'images/photo_carts/office chair.jpg' %}" class="card-img-top" alt="Стул">
+                    <div class="card-body d-flex flex-column">
+                        <a href="#">
+                            <p class="card-title mb-1">Стул</p>
+                        </a>
+                        <p class="card-text text-truncate">
+                            Микро описание ____________________________________.
+                        </p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center gap-2">
+                            <p class="mb-0"><s>100</s> $</p>
+                            <p class="mb-0"><strong>90.00 $</strong></p>
+                            <span class="badge bg-warning text-dark">Скидка 10.00 %</span>
+                            <a href="#" class="btn add-to-cart p-0">
+                                <img class="mx-1" src="{% static 'images/icons/cart-plus.svg' %}"
+                                     alt="Catalog Icon" width="32" height="32">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карта товара -->
+            <div class="col-12 col-sm-6 col-lg-4 p-3">
+                <div class="card border-primary rounded custom-shadow position-relative h-100">
+                    <img src="{% static 'images/photo_carts/bedside table.jpg' %}"
+                         class="card-img-top" alt="Комод">
+                    <div class="card-body d-flex flex-column">
+                        <a href="#">
+                            <p class="card-title mb-1">Комод</p>
+                        </a>
+                        <p class="card-text text-truncate">
+                            Микро описание ____________________________________.
+                        </p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center gap-2">
+                            <p class="mb-0"><s>100</s> $</p>
+                            <p class="mb-0"><strong>90.00 $</strong></p>
+                            <span class="badge bg-warning text-dark">Скидка 10.00 %</span>
+                            <a href="#" class="btn add-to-cart p-0">
+                                <img class="mx-1" src="{% static 'images/icons/cart-plus.svg' %}"
+                                     alt="Catalog Icon" width="32" height="32">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карта товара -->
+            <div class="col-12 col-sm-6 col-lg-4 p-3">
+                <div class="card border-primary rounded custom-shadow position-relative h-100">
+                    <img src="{% static 'images/photo_carts/sofa.jpg' %}" class="card-img-top" alt="Диван сова">
+                    <div class="card-body d-flex flex-column">
+                        <a href="#">
+                            <p class="card-title mb-1">Диван сова</p>
+                        </a>
+                        <p class="card-text text-truncate">
+                            Микро описание ____________________________________.
+                        </p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center gap-2">
+                            <p class="mb-0"><s>100</s> $</p>
+                            <p class="mb-0"><strong>90.00 $</strong></p>
+                            <span class="badge bg-warning text-dark">Скидка 10.00 %</span>
+                            <a href="#" class="btn add-to-cart p-0">
+                                <img class="mx-1" src="{% static 'images/icons/cart-plus.svg' %}"
+                                     alt="Catalog Icon" width="32" height="32">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Пагинация -->
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center my-4">
+                <div class="custom-shadow d-flex">
+                    <li class="page-item disabled">
+                        <a class="page-link">Previous</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endblock content %}
+
+
+{% block footer%}
+<footer class="py-4 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Контактные данные</p>
+    </div>
+</footer>
+{% endblock footer %}
+
