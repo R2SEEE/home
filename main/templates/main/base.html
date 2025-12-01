@@ -164,7 +164,13 @@
                         <li><a class="dropdown-item text-white" href="{% url 'orders:index' %}">Фурнитура</a></li>
                     </ul>
                 </div>
+
+                {% block filter %}
+
+                {% endblock filter %}
             </div>
+
+
         </div>
         <!-- Контент -->
         <div class="container">

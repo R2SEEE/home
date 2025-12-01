@@ -47,7 +47,6 @@ body {
 .filter-card {
     height: 100%;               /* растягиваем */
     position: sticky;
-
     border-radius: 8px;
 }
 
